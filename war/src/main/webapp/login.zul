@@ -1,0 +1,34 @@
+<zk xmlns:n="native">
+    <style src="/css/bootstrap.min.css" />
+    <style src="/css/style.css" />
+    <div id="body" class="main-app login-page">
+        <!-- Navbar -->
+        <include src="/nav.zul"/>
+
+        <n:div class="container">
+            <!-- Error Area-->
+            <div class="alert alert-danger" if="${not empty param.login_error}">
+                <div>Giriş başarısız oldu</div>
+            </div>
+
+            <!-- Login Area -->
+            <n:div class="login-inputs-wrapper col-md-4">
+                <n:form name="form" action="j_spring_security_check" method="POST" id="loginForm">
+                    <n:input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                    <n:div class="form-group">
+                        <n:h4>Enter Username and Password</n:h4>
+                    </n:div>
+                    <n:div class="form-group">
+                        <textbox class="form-control" id="tbUser" placeholder="Username" type="text" name="username"/>
+                    </n:div>
+                    <n:div class="form-group">
+                        <textbox class="form-control" id="tbPassword" placeholder="Password" type="password" name="password"/>
+                    </n:div>
+                    <n:div>
+                        <n:input class="btn btn-primary" type="submit" value="Login"/>
+                    </n:div>
+                </n:form>
+            </n:div>
+        </n:div>
+    </div>
+</zk>

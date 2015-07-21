@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <deployment>
+        <dependencies>
+            <module name="deployment.platform.ear" />
+        </dependencies>
+        <exclusions>
+            <module name="javaee.api"/>
+            <module name="org.hibernate"/>
+            <module name="javax.persistence"/>
+        </exclusions>
+        <exclude-subsystems>
+            <subsystem name="jpa"/>
+        </exclude-subsystems>
+    </deployment>
+</jboss-deployment-structure>

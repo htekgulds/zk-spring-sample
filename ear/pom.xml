@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>zk-spring-sample</artifactId>
+        <groupId>tr.gov.tuik.zk</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>zk-spring-sample-ear</artifactId>
+    <packaging>ear</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>tr.gov.tuik.zk</groupId>
+            <artifactId>zk-spring-sample-war</artifactId>
+            <type>war</type>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!-- BUILD -->
+    <build>
+        <finalName>zk-spring-ear</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <modules>
+                        <webModule>
+                            <groupId>tr.gov.tuik.zk</groupId>
+                            <artifactId>zk-spring-sample-war</artifactId>
+                        </webModule>
+                    </modules>
+                    <!--<archive>-->
+                    <!--<manifestEntries>-->
+                    <!--<Dependencies>deployment.zk-spring-ear.ear.spring-context-4.1.7.RELEASE.jar, deployment.zk-spring-ear.ear.spring-core-4.1.7.RELEASE.jar, deployment.zk-spring-ear.ear.spring-beans-4.1.7.RELEASE.jar, deployment.zk-spring-ear.ear.spring-aop-4.1.7.RELEASE.jar, deployment.zk-spring-ear.ear.validation-api-1.1.0.Final.jar, deployment.zk-spring-ear.ear.hibernate-validator-5.1.3.Final.jar, deployment.zk-spring-ear.ear.hibernate-jpa-2.1-api-1.0.0.Final.jar, deployment.zk-spring-ear.ear.hibernate-core-4.3.10.Final.jar, deployment.zk-spring-ear.ear.jandex-1.1.0.Final.jar, deployment.zk-spring-ear.ear.hibernate-commons-annotations-4.0.5.Final.jar, deployment.platform.ear</Dependencies>-->
+                    <!--</manifestEntries>-->
+                    <!--</archive>-->
+                </configuration>
+            </plugin>
+
+            <!-- JREBEL -->
+            <plugin>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>jrebel-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-rebel-xml</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC
+	"-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN"
+	"http://java.sun.com/dtd/application_1_3.dtd">
+<application>
+    <display-name>zk-spring-sample-ear</display-name>
+    <module>
+        <web>
+            <web-uri>zk-spring-sample-war-1.0-SNAPSHOT.war</web-uri>
+            <context-root>/zk-spring-sample-war</context-root>
+        </web>
+    </module>
+    <module>
+        <java>spring-web-4.1.7.RELEASE.jar</java>
+    </module>
+    <module>
+        <java>spring-context-4.1.7.RELEASE.jar</java>
+    </module>
+    <module>
+        <java>spring-context-support-4.1.7.RELEASE.jar</java>
+    </module>
+    <module>
+        <java>spring-core-4.1.7.RELEASE.jar</java>
+    </module>
+    <module>
+        <java>spring-beans-4.1.7.RELEASE.jar</java>
+    </module>
+    <module>
+        <java>spring-expression-4.1.7.RELEASE.jar</java>
+    </module>
+    <module>
+        <java>spring-aop-4.1.7.RELEASE.jar</java>
+    </module>
+    <module>
+        <java>hibernate-core-4.3.10.Final.jar</java>
+    </module>
+    <!--<module>-->
+        <!--<java>jandex-1.1.0.Final.jar</java>-->
+    <!--</module>-->
+    <module>
+        <java>hibernate-commons-annotations-4.0.5.Final.jar</java>
+    </module>
+    <!--<module>-->
+        <!--<java>validation-api-1.1.0.Final.jar</java>-->
+    <!--</module>-->
+    <module>
+        <java>hibernate-jpa-2.1-api-1.0.0.Final.jar</java>
+    </module>
+    <!--<module>-->
+        <!--<java>hibernate-validator-5.1.3.Final.jar</java>-->
+    <!--</module>-->
+</application>

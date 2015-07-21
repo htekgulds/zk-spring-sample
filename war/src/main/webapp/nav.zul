@@ -1,0 +1,27 @@
+<zk xmlns:n="native">
+    <n:nav class="navbar navbar-fixed-top navbar-default">
+        <n:div class="container-fluid">
+
+            <!-- Header / Menu Button -->
+            <n:div class="navbar-header">
+                <n:button type="button" data-toggle="collapse" data-target="#loginNavbar" class="navbar-toggle collapsed" aria-expamded="false">
+                    <n:span class="sr-only">Toggle Navigation</n:span>
+                    <n:span class="icon-bar"/>
+                    <n:span class="icon-bar"/>
+                    <n:span class="icon-bar"/>
+                </n:button>
+                <n:a class="navbar-brand">ZK Spring Security Example</n:a>
+            </n:div>
+
+            <!-- Menu -->
+            <n:div class="collapse navbar-collapse" id="loginNavbar">
+                <n:p if="${not empty execution.userPrincipal}" class="navbar-text">Signed in as ${execution.userPrincipal.name}</n:p>
+                <n:form class="navbar-form navbar-right" action="logout" method="POST" if="${not empty execution.userPrincipal}">
+                    <n:button class="btn btn-primary navbar-btn" type="submit">Logout</n:button>
+                    <n:input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                </n:form>
+            </n:div>
+
+        </n:div>
+    </n:nav>
+</zk>

@@ -1,0 +1,12 @@
+body {
+    padding: 0 !important;
+}
+
+.main-app {
+    padding-top: 72px;
+}
+
+.login-inputs-wrapper {
+    padding: 20px;
+    border: 1px solid #444444;
+}

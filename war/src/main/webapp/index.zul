@@ -1,0 +1,19 @@
+<zk xmlns:n="native">
+    <style src="/css/bootstrap.min.css" />
+    <style src="/css/style.css" />
+    <div id="body" class="main-app login-page" apply="tr.gov.tuik.zk.controller.MainComposer">
+        <!-- Navbar -->
+        <include src="/nav.zul"/>
+
+        <n:div class="container">
+            <n:div>
+                <n:div>
+                    <label id="labelHello" value="Click the button!"/>
+                </n:div>
+                <n:div>
+                    <button id="btnHello" label="The Button"/>
+                </n:div>
+            </n:div>
+        </n:div>
+    </div>
+</zk>
